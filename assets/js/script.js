@@ -1,8 +1,8 @@
 // GIVEN I am using a daily planner to create a schedule
 
 
-// WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar - connect it to the currentDay id
+// WHEN**** I open the planner
+// THEN**** the current day is displayed at the top of the calendar - connect it to the currentDay id
 var today = moment().format('[Today is] dddd MMMM Do, YYYY');
 var time = moment().format('[ and the time is] hh:mm a')
 // "20210817", "YYYYMMDD").format("[Today is] dddd, MMM Do YY")
@@ -24,6 +24,29 @@ var nineHour = document.getElementById("input-9am").value
 
 console.log(currentHour);
 console.log(nineHour);
+
+// Color Functions (Past-gray, Present-red, Future-green)
+function addClassPast() {
+    var x = document.getElementById("input-9am");
+    x.className += " past";
+}
+
+function addClassPresent() {
+    var x = document.getElementById("input-9am");
+    x.className += " present";
+}
+
+function addClassFuture() {
+    var x = document.getElementById("input-9am");
+    x.className += " future";
+}
+
+// 9am Color Change
+if (currentHour == nineHour) {
+    addClassPresent();
+} else  {
+    addClassPast();
+}
 
 // function whatTimeIsIt() {
     
