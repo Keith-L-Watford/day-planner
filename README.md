@@ -1,28 +1,24 @@
 # Day Planner
 ## Description
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-## Table of Contents (Optional)
-If your README is long, add a table of contents to make it easy for users to find what they need.
+I was assigned to create a day planner. I used this project as further practice in JavaScript and to familiarize myself a little with moment.js. Although, my js logic seems to work as it should, this interation of the planner isn't DRY at all. Hopefully in the future Ill be able to refactor this project.
+
+## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+
 ## Installation
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+No installs required. Works best on an updated browser.
+
 ## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Type into any block your plans for the day and then hit the save button. Your list items should be saved into your local storage and the next time you come to the page, your previous entries should be right where you left them.
+
+![A screen shot of the day planner.](assets/images/screencapture-127-0-0-1-5500-2021-06-11-16_46_42.png)
+
 ## Credits
-List your collaborators, if any, with links to their GitHub profiles.
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-If you followed tutorials, include links to those here as well.
+Shout out to teacher Leif for helping me retreive my data from local storage. The fix was that I needed to move the call function of the function itself.
+
 ## License
 This is free and unencumbered software released into the public domain.
 
@@ -33,10 +29,3 @@ In jurisdictions that recognize copyright laws, the author or authors of this so
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to http://unlicense.org/
-
-
-## Features
-If your project has a lot of features, list them here.
-
-## Tests
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
