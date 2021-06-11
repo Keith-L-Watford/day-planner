@@ -13,6 +13,7 @@ No installs required. Works best on an updated browser.
 
 ## Usage
 Type into any block your plans for the day and then hit the save button. Your list items should be saved into your local storage and the next time you come to the page, your previous entries should be right where you left them.
+https://keith-l-watford.github.io/day-planner/
 
 ![A screen shot of the day planner.](assets/images/screencapture-127-0-0-1-5500-2021-06-11-16_46_42.png)
 
