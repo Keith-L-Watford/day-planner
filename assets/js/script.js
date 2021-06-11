@@ -1,71 +1,213 @@
-// GIVEN I am using a daily planner to create a schedule
-
-
-// WHEN**** I open the planner
-// THEN**** the current day is displayed at the top of the calendar - connect it to the currentDay id
+// Header Time
 var today = moment().format('[Today is] dddd MMMM Do, YYYY');
 var time = moment().format('[ and the time is] hh:mm a')
-// "20210817", "YYYYMMDD").format("[Today is] dddd, MMM Do YY")
 $(".current-day").text(today + time);
 
-
-
-// WHEN I scroll down
-// THEN I am presented with timeblocks for standard business hours
-
-
-// WHEN I view the timeblocks for that day
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-// relative time rounding ?? (math floor)
-// or maybe its more of a switch statement, where when hour = moment().format(hh) 
-// and when each hour equals the same number (id?) in the box it will change to green.if less than number, turns red, if greater than it turns gray or whatever
-var currentHour = moment().format('hh')
-var nineHour = document.getElementById("input-9am").value
-
-console.log(currentHour);
-console.log(nineHour);
+// Time Variables and the current hour in military format
+var currentHour = moment().format('kk')
+var nineHour = 9
+var tenHour = 10
+var elevenHour = 11
+var twelveHour = 12
+var oneHour = 13
+var twoHour = 14
+var threeHour = 15
+var fourHour = 16
+var fiveHour = 17
 
 // Color Functions (Past-gray, Present-red, Future-green)
-function addClassPast() {
-    var x = document.getElementById("input-9am");
-    x.className += " past";
+// 9am Color Change Logic******
+function nineClassPast() {
+    var xNine = document.getElementById("input-9am");
+    xNine.className += " past";
 }
-
-function addClassPresent() {
+function nineClassPresent() {
     var x = document.getElementById("input-9am");
     x.className += " present";
 }
-
-function addClassFuture() {
+function nineClassFuture() {
     var x = document.getElementById("input-9am");
     x.className += " future";
 }
 
-// 9am Color Change
 if (currentHour == nineHour) {
-    addClassPresent();
-} else  {
-    addClassPast();
+    nineClassPresent();
+} else if (currentHour < nineHour) {
+    nineClassFuture();
+} else {
+    nineClassPast();
 }
 
-// function whatTimeIsIt() {
-    
-// }
+// 10am Color Change Logic
+function tenClassPast() {
+    var ten = document.getElementById("input-10am");
+    ten.className += " past";
+}
+function tenClassPresent() {
+    var ten = document.getElementById("input-10am");
+    ten.className += " present";
+}
+function tenClassFuture() {
+    var ten = document.getElementById("input-10am");
+    ten.className += " future";
+}
+if (currentHour < tenHour) {
+    tenClassFuture();
+} else if (currentHour == tenHour) {
+    tenClassPresent();
+} else {
+    tenClassPast();
+}
 
-// if (currentHour < nineHour) {
-//     document.element.classList.add("future");
-// } else if (currentHour > nineHour) {
-//     document.element.classList.add("past");
-// } else {
-//     document.element.classList.add("present")
-// }
+// 11am Color Change Logic
+function elevenClassPast() {
+    var eleven = document.getElementById("input-11am");
+    eleven.className += " past";
+}
+function elevenClassPresent() {
+    var eleven = document.getElementById("input-11am");
+    eleven.className += " present";
+}
+function elevenClassFuture() {
+    var eleven = document.getElementById("input-11am");
+    eleven.className += " future";
+}
 
+if (currentHour < elevenHour) {
+    elevenClassFuture();
+} else if (currentHour == elevenHour) {
+    elevenClassPresent();
+} else {
+    elevenClassPast();
+}
 
-// WHEN*** I click into a timeblock
-// THEN*** I can enter an event
-// WHEN***** I click the save button for that timeblock
-// THEN***** the text for that event is saved in local storage
+// 12pm Color Change Logic
+function twelveClassPast() {
+    var twelve = document.getElementById("input-12pm");
+    twelve.className += " past";
+}
+function twelveClassPresent() {
+    var twelve = document.getElementById("input-12pm");
+    twelve.className += " present";
+}
+function twelveClassFuture() {
+    var twelve = document.getElementById("input-12pm");
+    twelve.className += " future";
+}
+if (currentHour < twelveHour) {
+    twelveClassFuture();
+} else if (currentHour == twelveHour) {
+    twelveClassPresent();
+} else {
+    twelveClassPast();
+}
 
+// 1pm Color Change Logic
+function oneClassPast() {
+    var one = document.getElementById("input-1pm");
+    one.className += " past";
+}
+function oneClassPresent() {
+    var one = document.getElementById("input-1pm");
+    one.className += " present";
+}
+function oneClassFuture() {
+    var one = document.getElementById("input-1pm");
+    one.className += " future";
+}
+if (currentHour < oneHour) {
+    oneClassFuture();
+} else if (currentHour == oneHour) {
+    oneClassPresent();
+} else {
+    oneClassPast();
+}
+
+// 2pm Color Change Logic
+ function twoClassPast() {
+    var two = document.getElementById("input-2pm");
+    two.className += " past";
+}
+function twoClassPresent() {
+    var two = document.getElementById("input-2pm");
+    two.className += " present";
+}
+function twoClassFuture() {
+    var two = document.getElementById("input-2pm");
+    two.className += " future";
+}
+if (currentHour < twoHour) {
+    twoClassFuture();
+} else if (currentHour == twoHour) {
+    twoClassPresent();
+} else {
+    twoClassPast();
+}
+
+// 3pm Color Change Logic
+function threeClassPast() {
+    var three = document.getElementById("input-3pm");
+    three.className += " past";
+}
+function threeClassPresent() {
+    var three = document.getElementById("input-3pm");
+    three.className += " present";
+}
+function threeClassFuture() {
+    var three = document.getElementById("input-3pm");
+    three.className += " future";
+}
+if (currentHour < threeHour) {
+    threeClassFuture();
+} else if (currentHour == threeHour) {
+    threeClassPresent();
+} else {
+    threeClassPast();
+}
+
+// 4pm Color Change Logic
+function fourClassPast() {
+    var four = document.getElementById("input-4pm");
+    four.className += " past";
+}
+function fourClassPresent() {
+    var four = document.getElementById("input-4pm");
+    four.className += " present";
+}
+function fourClassFuture() {
+    var four = document.getElementById("input-4pm");
+    four.className += " future";
+}
+if (currentHour < fourHour) {
+    fourClassFuture();
+} else if (currentHour == fourHour) {
+    fourClassPresent();
+} else {
+    fourClassPast();
+}
+
+// 5pm Color Change Logic
+function fiveClassPast() {
+    var five = document.getElementById("input-5pm");
+    five.className += " past";
+}
+function fiveClassPresent() {
+    var five = document.getElementById("input-5pm");
+    five.className += " present";
+}
+function fiveClassFuture() {
+    var five = document.getElementById("input-5pm");
+    five.className += " future";
+}
+if (currentHour < fiveHour) {
+    fiveClassFuture();
+} else if (currentHour == fiveHour) {
+    fiveClassPresent();
+} else {
+    fiveClassPast();
+}
+
+// Local Storage Functions 
 // 9am feature
 var userInputNine = document.getElementById("input-9am")
 var saveButtonNine = document.getElementById("save-button-9am");
@@ -101,15 +243,131 @@ function renderMessageTen() {
     }
 }
 
+// 11am feature
+var userInputEleven = document.getElementById("input-11am")
+var saveButtonEleven = document.getElementById("save-button-11am");
+saveButtonEleven.addEventListener("click", function (event) {
+    event.preventDefault();
 
-// WHEN I refresh the page
-// THEN the saved events persist
+    var userInputEleven = document.getElementById('input-11am').value.trim()
+
+    localStorage.setItem("keyEleven", JSON.stringify(userInputEleven));
+});
+function renderMessageEleven() {
+    var lastEntryEleven = JSON.parse(localStorage.getItem("keyEleven"));
+    if (lastEntryEleven !== null) {
+        document.getElementById('input-11am').value = lastEntryEleven
+    }
+}
+
+// 12pm feature
+var userInputTwelve = document.getElementById("input-12pm")
+var saveButtonTwelve = document.getElementById("save-button-12pm");
+saveButtonTwelve.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    var userInputTwelve = document.getElementById('input-12pm').value.trim()
+
+    localStorage.setItem("keyTwelve", JSON.stringify(userInputTwelve));
+});
+function renderMessageTwelve() {
+    var lastEntryTwelve = JSON.parse(localStorage.getItem("keyTwelve"));
+    if (lastEntryTwelve !== null) {
+        document.getElementById('input-12pm').value = lastEntryTwelve
+    }
+}
+
+// 1pm feature
+var userInputOne = document.getElementById("input-1pm")
+var saveButtonOne = document.getElementById("save-button-1pm");
+saveButtonOne.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    var userInputOne = document.getElementById('input-1pm').value.trim()
+
+    localStorage.setItem("keyOne", JSON.stringify(userInputOne));
+});
+function renderMessageOne() {
+    var lastEntryOne = JSON.parse(localStorage.getItem("keyOne"));
+    if (lastEntryOne !== null) {
+        document.getElementById('input-1pm').value = lastEntryOne
+    }
+}
+
+// 2pm feature
+var userInputTwo = document.getElementById("input-2pm")
+var saveButtonTwo = document.getElementById("save-button-2pm");
+saveButtonTwo.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    var userInputTwo = document.getElementById('input-2pm').value.trim()
+
+    localStorage.setItem("keyTwo", JSON.stringify(userInputTwo));
+});
+function renderMessageTwo() {
+    var lastEntryTwo = JSON.parse(localStorage.getItem("keyTwo"));
+    if (lastEntryTwo !== null) {
+        document.getElementById('input-2pm').value = lastEntryTwo
+    }
+}
+
+// 3pm feature
+var userInputThree = document.getElementById("input-3pm")
+var saveButtonThree = document.getElementById("save-button-3pm");
+saveButtonThree.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    var userInputThree = document.getElementById('input-3pm').value.trim()
+
+    localStorage.setItem("keyThree", JSON.stringify(userInputThree));
+});
+function renderMessageThree() {
+    var lastEntryThree = JSON.parse(localStorage.getItem("keyThree"));
+    if (lastEntryThree !== null) {
+        document.getElementById('input-3pm').value = lastEntryThree
+    }
+}
+
+// 4pm feature
+var userInputFour = document.getElementById("input-4pm")
+var saveButtonFour = document.getElementById("save-button-4pm");
+saveButtonFour.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    var userInputFour = document.getElementById('input-4pm').value.trim()
+
+    localStorage.setItem("keyFour", JSON.stringify(userInputFour));
+});
+function renderMessageFour() {
+    var lastEntryFour = JSON.parse(localStorage.getItem("keyFour"));
+    if (lastEntryFour !== null) {
+        document.getElementById('input-4pm').value = lastEntryFour
+    }
+}
+
+// 5pm feature
+var userInputFive = document.getElementById("input-5pm")
+var saveButtonFive = document.getElementById("save-button-5pm");
+saveButtonFive.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    var userInputFive = document.getElementById('input-5pm').value.trim()
+
+    localStorage.setItem("keyFive", JSON.stringify(userInputFive));
+});
+function renderMessageFive() {
+    var lastEntryFive = JSON.parse(localStorage.getItem("keyFive"));
+    if (lastEntryFive !== null) {
+        document.getElementById('input-5pm').value = lastEntryFive
+    }
+}
+
 renderMessageNine();
 renderMessageTen();
-// renderMessageEleven();
-// renderMessageNoon();
-// renderMessageOne();
-// renderMessageTwo();
-// renderMessageThree();
-// renderMessageFour();
-// renderMessageFive();
+renderMessageEleven();
+renderMessageTwelve();
+renderMessageOne();
+renderMessageTwo();
+renderMessageThree();
+renderMessageFour();
+renderMessageFive();
