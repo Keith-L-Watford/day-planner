@@ -19,15 +19,17 @@ $(".current-day").text(today + time);
 
 // WHEN I view the timeblocks for that day
 // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-// relatice time rounding  (math floor)
+// relative time rounding ?? (math floor)
+// or maybe its more of a switch statement, where when hour = moment().format(hh) 
+// and when each hour equals the same number (id?) in the box it will change to green.if less than number, turns red, if greater than it turns gray or whatever
 
 
-// WHEN I click into a timeblock
-// THEN I can enter an event
+// WHEN*** I click into a timeblock
+// THEN*** I can enter an event
 
 
-// WHEN I click the save button for that timeblock
-// THEN the text for that event is saved in local storage
+// WHEN***** I click the save button for that timeblock
+// THEN***** the text for that event is saved in local storage
 // function init() {
 //     var lastEntryNine = JSON.parse(localStorage.getItem("keyNine"));
 
@@ -36,27 +38,35 @@ $(".current-day").text(today + time);
 //     }
 // }
 
-
+// 9am feature
 var userInputNine = document.getElementById("input-9am")
 var saveButtonNine = document.getElementById("save-button-9am");
-
 saveButtonNine.addEventListener("click", function (event) {
     event.preventDefault();
 
     var userInputNine = document.getElementById('input-9am').value.trim()
 
     localStorage.setItem("keyNine", JSON.stringify(userInputNine));
-    
-    renderMessageNine();
+    console.log(userInputNine);
+
 });
 
 function renderMessageNine() {
-    var lastEntryNine = JSON.parse(localStorage.getItem("userInputNine"));
-    if (lastEntryNine == null) {
-        document.getElementById('input-9am').textContent = lastEntryNine
+    var lastEntryNine = JSON.parse(localStorage.getItem("keyNine"));
+    if (lastEntryNine !== null) {
+        document.getElementById('input-9am').value = lastEntryNine
     }
 }
 
 
 // WHEN I refresh the page
 // THEN the saved events persist
+renderMessageNine();
+renderMessageTen();
+renderMessageEleven();
+renderMessageNoon();
+renderMessageOne();
+renderMessageTwo();
+renderMessageThree();
+renderMessageFour();
+renderMessageFive();
