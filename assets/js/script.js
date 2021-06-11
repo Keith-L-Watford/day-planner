@@ -4,8 +4,9 @@
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar - connect it to the currentDay id
 var today = moment().format('[Today is] dddd MMMM Do, YYYY');
+var time = moment().format('[ and the time is] hh:mm a')
 // "20210817", "YYYYMMDD").format("[Today is] dddd, MMM Do YY")
-$("#current-day").text(today);
+$(".current-day").text(today + time);
 
 
 // var currentTime = moment().format("[It it currently] hh:mm a")
@@ -27,13 +28,13 @@ $("#current-day").text(today);
 
 // WHEN I click the save button for that timeblock
 // THEN the text for that event is saved in local storage
-function init() {
-    var lastEntryNine = JSON.parse(localStorage.getItem("keyNine"));
+// function init() {
+//     var lastEntryNine = JSON.parse(localStorage.getItem("keyNine"));
 
-    if (lastEntryNine == null) {
-        userInputNine = lastEntryNine;
-    }
-}
+//     if (lastEntryNine == null) {
+//         userInputNine = lastEntryNine;
+//     }
+// }
 
 
 var userInputNine = document.getElementById("input-9am")
@@ -46,15 +47,15 @@ saveButtonNine.addEventListener("click", function (event) {
 
     localStorage.setItem("keyNine", JSON.stringify(userInputNine));
     
-    // renderMessageNine();
+    renderMessageNine();
 });
 
-// function renderMessageNine() {
-//     var lastEntryNine = JSON.parse(localStorage.getItem("userInputNine"));
-//     if (lastEntryNine == null) {
-//         document.getElementById('input-9am').textContent = lastEntryNine
-//     }
-// }
+function renderMessageNine() {
+    var lastEntryNine = JSON.parse(localStorage.getItem("userInputNine"));
+    if (lastEntryNine == null) {
+        document.getElementById('input-9am').textContent = lastEntryNine
+    }
+}
 
 
 // WHEN I refresh the page
